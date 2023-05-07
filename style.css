@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,700;0,800;1,100;1,200;1,500;1,700&family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  /* transition: 0.2s; */
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(#2b1055, #7597de);
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /*讓標題對齊交錯軸線中央*/
+  z-index: 10000;
+  /*以此設定此元素之堆疊順序為10000最大值，才能於頁面顯示*/
+}
+
+header .logo {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase; /*強制轉換為大寫*/
+  letter-spacing: 2px; /*設置字的間距*/
+}
+
+header ul {
+  display: flex; /*彈性布局的意思*/
+  justify-content: center;
+  align-items: center;
+}
+header ul li {
+  list-style: none;
+  margin-left: 20px;
+}
+header ul li a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #fff;
+  border-radius: 20px; /*設置邊框為橢圓*/
+}
+header ul li a:hover,
+header ul li a.active {
+  background: #fff;
+  color: #2b1055;
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #1c0522, transparent);
+  z-index: 1000;
+}
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*填滿元素並保持寬高比，超出的部分會被裁切*/
+  pointer-events: none;
+  /*原本滑鼠無法點擊的下層div，設定為pointer-event: none的話，
+    可以讓鼠標直接穿越上層div，對下層div進行動作。*/
+}
+section img#moon {
+  mix-blend-mode: screen;
+}
+section img#mountains_front {
+  z-index: 10;
+}
+#text {
+  position: absolute;
+  right: -350px;
+  color: #fff;
+  white-space: nowrap; /*空格不換行的意思*/
+  font-size: 7.5vw;
+  z-index: 9;
+}
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 30px;
+  border-radius: 40px;
+  background: #fff;
+  color: #2b1055;
+  font-size: 1.5em;
+  z-index: 9;
+  transform: translateY(100px);
+}
+.sec {
+  position: relative;
+  padding: 100px;
+  background: #1c0522;
+}
+.sec h2 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.sec p {
+  font-size: 1em;
+  color: #fff;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>練習1229</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">Logo</a>
+      <ul>
+        <li><a href="#" class="active">首頁</a></li>
+        <li><a href="#">關於</a></li>
+        <li><a href="#">工作</a></li>
+        <li><a href="#">聯繫</a></li>
+      </ul>
+    </header>
+    <section>
+      <img src="./images/stars.png" id="stars" />
+      <img src="./images/moon.png" id="moon" />
+      <img src="./images/mountains_behind.png" id="mountains_behind" />
+      <h2 id="text">Moon Light</h2>
+      <a href="#sec" class="btn">探索</a>
+      <img src="./images/mountains_front.png" id="mountains_front" />
+    </section>
+    <div class="sec" id="sec">
+      <h2>月球</h2>
+      <p>
+        月球，即地衛一，俗稱月亮，是地球唯一的天然衛星，直徑略大於地球的四分之一，質量約為地球的1/81，相對於所環繞的行星，它是體積和質量最大的衛星，並且是太陽系中第五大的衛星，也是太陽系內密度第二高的衛星，僅次於木衛一。
+        一般認為月亮形成於約45億年前，即地球出現後的不久。<br /><br />有關它的起源有幾種假說，但沒有一種能完全合理地作毫無破綻的解釋，最被普遍認可的是大碰撞說，它假設月球形成於地球與火星般大小的「特亞」之間的一次巨大撞擊。
+        它的自轉與公轉同步（潮汐鎖定），因此以同一面朝向地球。<br /><br />月球正面標記著黑暗的火山熔岩海，中間夾雜著明亮和古老地殼的高地和明顯的隕石坑。從地球用肉眼觀測，月球是除了太陽之外最亮的天體，儘管它看起來非常明亮，但其表面實際很暗，反射率僅略高於舊瀝青。由於月球在天空中非常容易被觀測，再加上規律性的月相變化，使它自古以來就對人類文化如曆法、藝術和神話等產生重大影響。月球的引力影響造成地球海洋的潮汐和每一天的時間延長。月球現在與地球的距離，大約是地球直徑的30倍，換而言之，將太陽系八大行星外加冥王星塞進地球與月球間還有餘剩空間。而月球與太陽的大小比率與距離的比率相近，使得它的視覺大小與太陽幾乎相同，在日食時月球可以完全遮蔽太陽而形成日全食。
+        月球是第一個人類曾經登陸過的地外星球。
+      </p>
+    </div>
+
+    <script>
+      let stars = document.getElementById("stars");
+      let moon = document.getElementById("moon");
+      let mountains_behind = document.getElementById("mountains_behind");
+      let text = document.getElementById("text");
+      let btn = document.getElementById("btn");
+      let mountains_front = document.getElementById("mountains_front");
+      let header = document.querySelector("header");
+
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        console.log(value);
+        stars.style.left = value * 0.25 + "px";
+        moon.style.top = value * 1.05 + "px";
+        mountains_behind.style.top = value * 0.5 + "px";
+        mountains_front.style.top = value * 0 + "px";
+        text.style.marginRight = value * 2 + "px";
+        text.style.marginTop = value * 1.5 + "px";
+        btn.style.marginTop = value * 1.5 + "px";
+        header.style.top = value * 0.5 + "px";
+      });
+    </script>
+  </body>
+</html>
